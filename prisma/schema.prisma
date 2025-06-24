@@ -51,6 +51,7 @@ model Link{
   id String @id @default(cuid())
   content ContentType @default(Youtube)
   link String
+  publicDisplay Boolean @default(false)
   project Project @relation(fields: [projectId],references: [id])
   projectId String
   tag Tag @relation(fields: [tagId],references: [id])

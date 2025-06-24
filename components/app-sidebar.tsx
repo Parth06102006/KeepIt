@@ -54,7 +54,7 @@ const items = [
   },
   {
     title: "Videos",
-    url: "/Videos",
+    url: "/videos",
     icon: faVideo,
   },
   {
@@ -82,7 +82,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton className='border-2' onClick={()=>{router.push(item.url)}}>
+                  <SidebarMenuButton className='border-2 hover:text-green-500' onClick={()=>{router.push(item.url)}}>
                     <FontAwesomeIcon icon={item.icon} className='fa-fw'/>
                     <span className='ml-2'>{item.title}</span>
                   </SidebarMenuButton>

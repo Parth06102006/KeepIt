@@ -6,8 +6,7 @@ import { MenubarDemo } from '@/components/menubar'
 export default function Home() {
   return (
       <>
-        <AppSidebar/>
-        <MenubarDemo/>
+        Home
       </>
   )
 }

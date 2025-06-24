@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/menubar"
 import { CirclePlus } from "lucide-react"
 
-export function MenubarDemo() {
+export function MenubarPage() {
   return (
     <Menubar className="fixed top-5 left-1/2 -translate-x-1/2 backdrop-blur-lg bg-black/10 p-2 border-4 border-green-300/70 gap-4 text-green-100">
       <MenubarMenu>
