@@ -12,14 +12,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-type Props = {
-  nav:boolean
-}
 
 export function ModeToggle(props:Props) {
   const { setTheme } = useTheme()
   return (
-    <div className={props.nav ?'':'absolute top-1 right-2'}>
+    <div>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">

@@ -2,7 +2,6 @@ import {ClerkProvider} from '@clerk/nextjs'
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider,SidebarTrigger } from '@/components/ui/sidebar';
-import {AppSidebar} from '@/components/app-sidebar'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
@@ -28,6 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+            <SidebarTrigger/>
             {children}
         </ThemeProvider>
       </SidebarProvider>

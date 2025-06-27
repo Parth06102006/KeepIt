@@ -8,6 +8,7 @@ import { LogOutIcon } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { ModeToggle } from "@/components/toggle";
 
 export default function AppLayout({
   children,
@@ -25,14 +26,13 @@ export default function AppLayout({
   return (
     <div>
         {!isAuthPage && <AppSidebar/>}
-        {!isAuthPage && <MenubarPage/>}
-        {!isAuthPage && <SidebarTrigger/>}
-        {children}
-            
+        {!isAuthPage && <MenubarPage/>}        
               {user && (
-                <div className ="top-5 right-0 fixed -translate-x-1">
+                <div className="top-2 right-2 fixed flex items-center gap-4 bg-black/10 p-3 rounded-lg">
+                  <ModeToggle/>
+                  <div className ="-translate-x-1">
                   <div className="flex-col gap-2 items-center">
-                      <div className="flex gap-4 mb-2 border p-3 justify-center rounded-4xl w-fit bg-white/10 hover:bg-transparent">
+                      <div className="flex gap-1 justify-center rounded-4xl w-fit hover:bg-transparent">
                       <div className="avatar">
                           <div className="relative w-8 h-8 rounded-full object-fit" onMouseEnter={()=>{
                             const email =  document.getElementById('email')
@@ -67,7 +67,9 @@ export default function AppLayout({
                   </div>
               </div>
             </div>
+                </div>
           )}
+      {children}
     </div>
   );
 }

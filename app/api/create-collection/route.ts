@@ -41,4 +41,8 @@ export async function POST(req:NextRequest){
         }
         return NextResponse.json({err:'Unable to Create New Collection'},{status:500})
     }
+    finally
+    {
+        prisma.$disconnect()
+    }
 }
