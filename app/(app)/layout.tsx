@@ -1,14 +1,9 @@
 "use client";
 
 import React from "react";
-import { AppSidebar } from "@/components/app-sidebar";
-import { MenubarPage } from "@/components/menubar";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { LogOutIcon } from "lucide-react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { SidebarTrigger } from "@/components/ui/sidebar";
-import { ModeToggle } from "@/components/toggle";
 
 export default function AppLayout({
   children,
@@ -21,15 +16,10 @@ export default function AppLayout({
   const handleSignOut = async () => {
     await signOut();
   };
-  const pathname = usePathname();
-  const isAuthPage = pathname === '/sign-in' || pathname === '/sign-up'
   return (
-    <div>
-        {!isAuthPage && <AppSidebar/>}
-        {!isAuthPage && <MenubarPage/>}        
+    <div className="bg-accent-foreground h-screen">      
               {user && (
-                <div className="top-2 right-2 fixed flex items-center gap-4 bg-black/10 p-3 rounded-lg">
-                  <ModeToggle/>
+                <div className="top-2 right-2 fixed flex items-center gap-4 bg-white/80 p-3 rounded-lg">
                   <div className ="-translate-x-1">
                   <div className="flex-col gap-2 items-center">
                       <div className="flex gap-1 justify-center rounded-4xl w-fit hover:bg-transparent">

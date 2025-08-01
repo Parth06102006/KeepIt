@@ -1,15 +1,8 @@
 import { SignUp } from '@clerk/nextjs'
-import Image from 'next/image'
 
 export default function Page() {
   return( 
   <div className='flex justify-center items-center h-[100vh] w-[100vw] '>
-    <div className="flex sm:bg-green-900 p-4 rounded-2xl">
-        {/* Left image panel */}
-        <div className="relative h-[665px] w-[450px] hidden sm:block">
-          <Image src="/res1.png" fill alt="Logo" className="rounded-2xl" />
-          <div className="absolute inset-0 bg-white/30 rounded-2xl" />
-        </div>
       <SignUp
       appearance={{
         elements:{
@@ -43,6 +36,5 @@ export default function Page() {
         }
       }}
       />
-    </div>
   </div>)
 }

@@ -19,11 +19,10 @@ enum ContentType{
   youtube
   x
   instagram
-  texts
   reddit 
   photos 
   videos
-  otherLinks
+  otherlinks
 }
 
 model TotalProjects{
@@ -37,6 +36,7 @@ model Project{
   title String
   userId String
   links Link[]
+  texts Texts[]
   totalProject TotalProjects @relation(fields:[totalProjectId],references: [id])
   totalProjectId String
 }
@@ -45,6 +45,7 @@ model Tag{
   id String @id @default(cuid())
   link Link?  
   tag String[]
+  text Texts[]
 }
 
 model Link{
@@ -57,4 +58,15 @@ model Link{
   tag Tag? @relation(fields: [tagId],references: [id])
   tagId String? @unique
 }
+
+model Texts{
+  id String @id @default(cuid())
+  publicDisplay Boolean @default(false)
+  content String
+  project Project @relation(fields: [projectId],references: [id])
+  projectId String
+  tag Tag? @relation(fields: [tagId],references: [id])
+  tagId String? @unique
+}
+
 

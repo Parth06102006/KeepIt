@@ -1,37 +1,27 @@
 import { SignIn } from '@clerk/nextjs'
-import Image from 'next/image'
 
 export default function Page() {
   return( 
   <div className='flex justify-center items-center h-[100vh] w-[100vw]'>
-  <div className="flex sm:bg-green-900 p-4 rounded-2xl">
-    {/* Left image panel */}
-    <div className="relative h-[580px] w-[450px] hidden sm:block">
-      <Image src="/res2.png" fill alt="Logo" className="rounded-2xl" />
-      <div className="absolute inset-0 bg-white/30 rounded-2xl" />
-    </div>
-
       <SignIn
       appearance={{
         elements:{
           socialButtonsBlockButton:{
             background:'white',
-            color:'black',
+            color:'green',
             border:'none',
             boxShadow:'none',
             '&:hover':{
-              background:"rgba(120, 150, 125)",
-              color:'white'
+              background:"green",
+              color:'black'
             }
           },
         },
         variables:{
-          colorPrimary:'rgba(35, 92, 55)',
-          colorWarning:'rgba(99,43,24)',
-          colorBackground:'rgba(81, 173, 97)',
+          colorPrimary:'green',
+          colorInputText:'green',
           colorNeutral:'black',
           fontSize:'15px',
-          colorText:'white',
         },
         layout: {
           socialButtonsPlacement: 'top',
@@ -44,6 +34,5 @@ export default function Page() {
         }
       }}
       />
-    </div>
   </div>)
 }
